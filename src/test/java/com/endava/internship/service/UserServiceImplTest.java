@@ -3,6 +3,7 @@ package com.endava.internship.service;
 
 import com.endava.internship.domain.Privilege;
 import com.endava.internship.domain.User;
+import com.endava.internship.domain.UserComparator;
 import com.endava.internship.service.UserService;
 import com.endava.internship.service.UserServiceImpl;
 import org.junit.jupiter.api.Test;
@@ -21,7 +22,8 @@ import static org.assertj.core.api.Assertions.entry;
 @SuppressWarnings("unchecked")
 public class UserServiceImplTest {
 
-    private UserService userService = new UserServiceImpl();
+    private UserComparator userComparator = new UserComparator();
+    private UserService userService = new UserServiceImpl(userComparator);
 
     private static final List<Privilege> ALL_PRIVILEGES = asList(Privilege.values());
 
